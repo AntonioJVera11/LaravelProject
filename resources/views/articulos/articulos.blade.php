@@ -81,10 +81,28 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel - Artículos
+                    Laravel - Artículos 
                 </div>
-
-                <div class="links">
+                   <table class="table">
+                       <thead>
+                       <legend>Tabla de Artículos</legend>
+                           <tr>
+                                @foreach ($articulos[0] as $key => $registros)
+                                <th>{{ $key }}</th>
+                                @endforeach
+                           </tr>
+                       </thead>
+                       <tbody>
+                            @foreach ($articulos as $registro)
+                           <tr>
+                                @foreach ($registro as $campo)
+                                <td>{{ $campo }}</td>
+                                @endforeach
+                           </tr>
+                           @endforeach
+                       </tbody>
+                   </table>
+                <!-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
@@ -93,7 +111,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
