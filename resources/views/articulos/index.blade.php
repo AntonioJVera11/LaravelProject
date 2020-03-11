@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -90,6 +92,7 @@
                                 @foreach ($articulos[0] as $key => $registros)
                                 <th>{{ $key }}</th>
                                 @endforeach
+                                <th>Acciones</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -98,20 +101,15 @@
                                 @foreach ($registro as $campo)
                                 <td>{{ $campo }}</td>
                                 @endforeach
+                                <td>
+                                    <a href="#" title="Visualizar"><i class="material-icons">visibility</i></a>
+                                    <a href="#" title="Editar"><i class="material-icons">edit</i></a>
+                                    <a href="#" title="Borrar"><i class="material-icons">clear</i></a->
+                                </td>
                            </tr>
                            @endforeach
                        </tbody>
                    </table>
-                <!-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
             </div>
         </div>
     </body>

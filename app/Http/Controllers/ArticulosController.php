@@ -4,56 +4,86 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class ArticulosController extends Controller
 {
-    public function store() {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $articulos = DB::table('articulos')->select('*')->get();
+        // var_dump($articulos);
+        // exit(0);
+        return view('Articulos.index', compact('articulos'));
+    }
 
-        $articulos = [
-            [
-                "id" => 1,
-                "Descripción" => "Teléfono Xiaomi Redmi 4X",
-                "Categoría" => "Telefonía",
-                "Stock" => 34, 
-                "Precio_Costo" => 100.45,
-                "Precio_Venta" => 120.67
-            ],
-            [
-                "id" => 2,
-                "Descripción" => "Portátil Toshiba",
-                "Categoría" => "Portátil",
-                "Stock" => 134, 
-                "Precio_Costo" => 1000.45,
-                "Precio_Venta" => 1200.67
-            ],
-            [
-                "id" => 3,
-                "Descripción" => "Pantalla 4K 32inch",
-                "Categoría" => "TV",
-                "Stock" => 200, 
-                "Precio_Costo" => 400.45,
-                "Precio_Venta" => 450.67
-            ],
-            [
-                "id" => 4,
-                "Descripción" => "Google Chromecast",
-                "Categoría" => "Streaming",
-                "Stock" => 434, 
-                "Precio_Costo" => 20.56,
-                "Precio_Venta" => 32.99
-            ]
-        ];
-        return view('articulos/articulos', compact('articulos'));
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
-    public function create() {
-        return view('articulos/create/create');
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
     }
-    public function show($id) {
-        return view('articulos/show/show', compact("id"));
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
-    public function update($id) {
-        return view('articulos/update/update', compact("id"));
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
-    public function delete($id) {
-        return view('articulos/delete/delete', compact("id"));
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

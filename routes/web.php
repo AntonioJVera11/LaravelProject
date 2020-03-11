@@ -10,22 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('Articulos', 'ArticulosController');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/articulos', 'ArticulosController@store');
+// Route::get('/articulos', 'ArticulosController@store');
 
-Route::get('/articulos/create', 'ArticulosController@create');
+// Route::get('/articulos/create', 'ArticulosController@create');
 
-Route::get('/articulos/show/{id}', 'ArticulosController@show')
-    ->where(['id' => '[\d]+']);;
+// Route::get('/articulos/show/{id}', 'ArticulosController@show')
+//     ->where(['id' => '[\d]+']);;
 
-Route::get('/articulos/update/{id}', 'ArticulosController@update')
-    ->where(['id' => '[\d]+']);;
+// Route::get('/articulos/update/{id}', 'ArticulosController@update')
+//     ->where(['id' => '[\d]+']);;
 
-Route::get('/articulos/delete/{id}', 'articulosController@delete');
+// Route::get('/articulos/delete/{id}', 'articulosController@delete');
 
 Route::get('/clientes', 'ClientesController@index');
 
