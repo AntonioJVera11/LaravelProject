@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Articulo;
+use App\Categoria;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -14,11 +17,10 @@ class ArticulosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $articulos = DB::table('articulos')->select('*')->get();
-        // var_dump($articulos);
-        // exit(0);
-        return view('Articulos.index', compact('articulos'));
+    {   
+        $articulos = Articulo::paginate(5);
+
+        return view('/articulos/indexArticulos', compact('articulos'));
     }
 
     /**
